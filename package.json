@@ -1,0 +1,15 @@
+{
+  "name": "apirest",
+  "version": "1.0.0",
+  "description": "Como crear una ApiRest con Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonmid",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}
