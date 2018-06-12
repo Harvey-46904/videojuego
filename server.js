@@ -115,6 +115,23 @@ app.get('/xbox', (req, res) => {
     });
     res.send(xbox)
 })
+//agregar xbox
+app.post('/createxbox', (req, res) => {
+    let data = req.body;
+    let consecutive = xbox.length;
+    let usersTmp = [{
+        success: true,
+        id: consecutive,
+        username: data.Username,
+        password: data.Password,
+        name: data.Name,
+        email: data.Email,
+        image: 'xxx.png'
+    }];
+    xbox.push(usersTmp[0])
+
+    res.send(usersTmp)
+})
 //LISTAR nintendo
 app.get('/nintendo', (req, res) => {
     let pos = 0;
