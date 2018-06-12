@@ -31,6 +31,13 @@ let xbox = [
     {id: 3, name: 'Fifa 2018', descriptio: 'Vive mas de cerca con tus jugadores favoritos el gran estreno de el nuevo juego', precio: '$216.000', image: 'http://stokpic.com/wp-content/uploads/2017/06/African-American-woman-leaning-against-a-wall-1.jpg'},
     {id: 4, name: 'GTA V', descriptio: 'La mejor saga de rock star con su nueva entrega en el nuevo modo de juego online', precio: '185.000', image: 'http://stokpic.com/wp-content/uploads/2017/04/Happy-Couple-Getting-Married-With-Confetti-And-Flowers.jpg'}
 ];
+let nintendo = [
+    {id: 0, name: 'Mario Kart 8', descriptio: 'Compite por ser el mejor de la pista ', precio: '$125.000', image: 'http://stokpic.com/wp-content/uploads/2018/03/Man-looking-out-to-the-ocean-at-a-sail-boat.jpg'},
+    {id: 1, name: 'The Legend of zelda', descriptio: 'Regresa a la historia con Link en su epica aventura por encontrar a Zelda', precio: '$150.000', image: 'http://stokpic.com/wp-content/uploads/2018/02/Beautiful-bride-smelling-her-bouquet-flowers.jpg'},
+    {id: 2, name: 'Mario Odyssey', descriptio: 'Regresa el fontanero favorito con sus nuevas aventuras en cientos de mundos', precio: '$125.000', image: 'http://stokpic.com/wp-content/uploads/2017/07/Close-up-of-mans-face-wet-from-ocean.jpg'},
+    {id: 3, name: 'Splatoon', descriptio: 'Esta vez la aventura es bajo la pintura , diviertete', precio: '$216.000', image: 'http://stokpic.com/wp-content/uploads/2017/06/African-American-woman-leaning-against-a-wall-1.jpg'},
+    {id: 4, name: 'Kirby', descriptio: 'Vuelve el personaje rosa esta vez con mas divercion y mas mundos', precio: '185.000', image: 'http://stokpic.com/wp-content/uploads/2017/04/Happy-Couple-Getting-Married-With-Confetti-And-Flowers.jpg'}
+];
 // ***************************************************************
 // ***************************************************************
 
@@ -100,6 +107,15 @@ app.get('/xbox', (req, res) => {
     });
     res.send(xbox)
 })
+//LISTAR nintendo
+app.get('/nintendo', (req, res) => {
+    let pos = 0;
+    nintendo.forEach(function(entry) {
+        entry.id = pos;
+        pos++;
+    });
+    res.send(nintendo)
+	})
 /*
 // Listar todos los contactos
 app.get('/contacts', (req, res) => {
