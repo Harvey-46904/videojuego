@@ -181,6 +181,13 @@ app.get('/play', (req, res) => {
     });
     res.send(play)
 	})
+	
+	//Eliminar
+	app.delete('/xbox/:id',(req, res) => {
+    let params = req.params;
+    xbox.splice(params.id, 1);
+    res.send('xbox delete')
+})
 /*
 // Listar todos los contactos
 app.get('/contacts', (req, res) => {
