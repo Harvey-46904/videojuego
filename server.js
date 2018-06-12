@@ -187,11 +187,13 @@ app.get('/play', (req, res) => {
     let params = req.params;
     xbox.splice(params.id, 1);
     res.send('xbox delete')
+	})
 		//Eliminar nintendo
 	app.delete('/nintendo/:id',(req, res) => {
     let params = req.params;
     nintendo.splice(params.id, 1);
     res.send('nintendo delete')
+	})
 		//Eliminar play
 	app.delete('/play/:id',(req, res) => {
     let params = req.params;
