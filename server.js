@@ -24,7 +24,13 @@ let users = [
     {id: 3, name: 'Erika Narvaez', phone: '4444444444', email: 'ddddd@hotmail.com', image: 'http://stokpic.com/wp-content/uploads/2017/06/African-American-woman-leaning-against-a-wall-1.jpg'},
     {id: 4, name: 'Juan Maya', phone: '5555555555', email: 'eeeee@gmail.com', image: 'http://stokpic.com/wp-content/uploads/2017/04/Happy-Couple-Getting-Married-With-Confetti-And-Flowers.jpg'}
 ];*/
-
+let xbox = [
+    {id: 0, name: 'Fornite', descriptio: 'El mejor juego gratuito con su nuevo modo Batlel Royal', precio: 'GRATUITO', image: 'http://stokpic.com/wp-content/uploads/2018/03/Man-looking-out-to-the-ocean-at-a-sail-boat.jpg'},
+    {id: 1, name: 'Halo Master Colletion', descriptio: 'La gran coleccion del mas grande heroe recopilado en toda la saga', precio: '$150.000', image: 'http://stokpic.com/wp-content/uploads/2018/02/Beautiful-bride-smelling-her-bouquet-flowers.jpg'},
+    {id: 2, name: 'Gears of Wars', descriptio: 'Continua la historia sobre la destruccion de la tierra y como un grupo de soldados tienen que liberarla', precio: '$125.000', image: 'http://stokpic.com/wp-content/uploads/2017/07/Close-up-of-mans-face-wet-from-ocean.jpg'},
+    {id: 3, name: 'Fifa 2018', descriptio: 'Vive mas de cerca con tus jugadores favoritos el gran estreno de el nuevo juego', precio: '$216.000', image: 'http://stokpic.com/wp-content/uploads/2017/06/African-American-woman-leaning-against-a-wall-1.jpg'},
+    {id: 4, name: 'GTA V', descriptio: 'La mejor saga de rock star con su nueva entrega en el nuevo modo de juego online', precio: '185.000', image: 'http://stokpic.com/wp-content/uploads/2017/04/Happy-Couple-Getting-Married-With-Confetti-And-Flowers.jpg'}
+];
 // ***************************************************************
 // ***************************************************************
 
@@ -75,6 +81,24 @@ app.post('/createUser', (req, res) => {
     users.push(usersTmp[0])
 
     res.send(usersTmp)
+})
+//Listar todos los user
+app.get('/users', (req, res) => {
+    let pos = 0;
+    users.forEach(function(entry) {
+        entry.id = pos;
+        pos++;
+    });
+    res.send(users)
+})
+//LISTAR XBOX
+app.get('/xbox', (req, res) => {
+    let pos = 0;
+    xbox.forEach(function(entry) {
+        entry.id = pos;
+        pos++;
+    });
+    res.send(xbox)
 })
 /*
 // Listar todos los contactos
