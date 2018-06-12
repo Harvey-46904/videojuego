@@ -209,6 +209,24 @@ app.put('/xbox/:id',(req, res) => {
     xbox[params.id]['precio'] = data.Precio;
     res.send("xbox update")
 })
+//actualizar nintendo
+app.put('/nintendo/:id',(req, res) => {
+    let params = req.params;
+    let data = req.body;
+    nintendo[params.id]['name'] = data.Name;
+    nintendo[params.id]['descriptio'] = data.Descriptio;
+    nintendo[params.id]['precio'] = data.Precio;
+    res.send("nintendo update")
+})
+//actualizar ps
+app.put('/play/:id',(req, res) => {
+    let params = req.params;
+    let data = req.body;
+    play[params.id]['name'] = data.Name;
+    play[params.id]['descriptio'] = data.Descriptio;
+    play[params.id]['precio'] = data.Precio;
+    res.send("play update")
+})
 /*
 // Listar todos los contactos
 app.get('/contacts', (req, res) => {
