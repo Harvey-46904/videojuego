@@ -38,6 +38,14 @@ let nintendo = [
     {id: 3, name: 'Splatoon', descriptio: 'Esta vez la aventura es bajo la pintura , diviertete', precio: '$216.000', image: 'http://stokpic.com/wp-content/uploads/2017/06/African-American-woman-leaning-against-a-wall-1.jpg'},
     {id: 4, name: 'Kirby', descriptio: 'Vuelve el personaje rosa esta vez con mas divercion y mas mundos', precio: '185.000', image: 'http://stokpic.com/wp-content/uploads/2017/04/Happy-Couple-Getting-Married-With-Confetti-And-Flowers.jpg'}
 ];
+
+let play = [
+    {id: 0, name: 'God of war', descriptio: 'El dios de la guerra a vuelto y esta vez dejara su legado', precio: '$125.000', image: 'http://stokpic.com/wp-content/uploads/2018/03/Man-looking-out-to-the-ocean-at-a-sail-boat.jpg'},
+    {id: 1, name: 'Farcry5', descriptio: 'La historia mas solicitada por los fans esta de vuelta', precio: '$150.000', image: 'http://stokpic.com/wp-content/uploads/2018/02/Beautiful-bride-smelling-her-bouquet-flowers.jpg'},
+    {id: 2, name: 'Monster Hunter', descriptio: 'Vive la era de los dragones y lucha por ser el dominador de todo', precio: '$125.000', image: 'http://stokpic.com/wp-content/uploads/2017/07/Close-up-of-mans-face-wet-from-ocean.jpg'},
+    {id: 3, name: 'Call of duty iii', descriptio: 'La tercera guerra mundial esta aqui y tienes que luchar o todo se ira abajo', precio: '$216.000', image: 'http://stokpic.com/wp-content/uploads/2017/06/African-American-woman-leaning-against-a-wall-1.jpg'},
+    {id: 4, name: 'Rocket League', descriptio: 'Imagina un partido de futbol pero esta vez desde coches, pues ven y sigue la emocionante aventura', precio: '185.000', image: 'http://stokpic.com/wp-content/uploads/2017/04/Happy-Couple-Getting-Married-With-Confetti-And-Flowers.jpg'}
+];
 // ***************************************************************
 // ***************************************************************
 
@@ -115,6 +123,15 @@ app.get('/nintendo', (req, res) => {
         pos++;
     });
     res.send(nintendo)
+	})
+	//LISTAR play
+app.get('/play', (req, res) => {
+    let pos = 0;
+    play.forEach(function(entry) {
+        entry.id = pos;
+        pos++;
+    });
+    res.send(play)
 	})
 /*
 // Listar todos los contactos
