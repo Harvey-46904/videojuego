@@ -200,6 +200,15 @@ app.get('/play', (req, res) => {
     play.splice(params.id, 1);
     res.send('play delete')
 })
+//ACTUALIZAR XBOX
+app.put('/xbox/:id',(req, res) => {
+    let params = req.params;
+    let data = req.body;
+    xbox[params.id]['name'] = data.Name;
+    xbox[params.id]['descriptio'] = data.Descriptio;
+    xbox[params.id]['precio'] = data.Precio;
+    res.send("xbox update")
+})
 /*
 // Listar todos los contactos
 app.get('/contacts', (req, res) => {
