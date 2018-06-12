@@ -122,10 +122,9 @@ app.post('/createxbox', (req, res) => {
     let usersTmp = [{
         success: true,
         id: consecutive,
-        username: data.Username,
-        password: data.Password,
+        descriptio: data.Descriptio,
         name: data.Name,
-        email: data.Email,
+        precio: data.Precio,
         image: 'xxx.png'
     }];
     xbox.push(usersTmp[0])
