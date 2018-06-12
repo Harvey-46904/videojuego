@@ -131,6 +131,38 @@ app.post('/createxbox', (req, res) => {
 
     res.send(usersTmp)
 })
+//agregar nintendo
+app.post('/createnintendo', (req, res) => {
+    let data = req.body;
+    let consecutive = nintendo.length;
+    let usersTmp = [{
+        success: true,
+        id: consecutive,
+        descriptio: data.Descriptio,
+        name: data.Name,
+        precio: data.Precio,
+        image: 'xxx.png'
+    }];
+    nintendo.push(usersTmp[0])
+
+    res.send(usersTmp)
+})
+//agregar ps
+app.post('/createplay', (req, res) => {
+    let data = req.body;
+    let consecutive = play.length;
+    let usersTmp = [{
+        success: true,
+        id: consecutive,
+        descriptio: data.Descriptio,
+        name: data.Name,
+        precio: data.Precio,
+        image: 'xxx.png'
+    }];
+    play.push(usersTmp[0])
+
+    res.send(usersTmp)
+})
 //LISTAR nintendo
 app.get('/nintendo', (req, res) => {
     let pos = 0;
